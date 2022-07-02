@@ -190,8 +190,10 @@ const Products = (props) => {
         <Col>
           <h1>CheckOut </h1>
           <Button onClick={() => {
-            alert(`Your order has been processed`);
-            setCart([]);
+            if (cart.length > 0) {
+              alert(`Your order has been processed`);
+              setCart([]);
+            }
             }}>CheckOut $ {finalList().total}</Button>
           <div> {finalList().total > 0 && finalList().final} </div>
         </Col>
